@@ -5,8 +5,14 @@ end
 %w(
 	DHCPServer
 	DNS
-	FreeSSHDService
-	wampmysqld64
+	DFSR
+	NTDS
+	ADWS
+	Dfs
+	Kdc
+	Netlogon
+	W32Time
+	
 ).each do |svc|
 	describe service(svc) do
 		it { should be_installed }
@@ -15,6 +21,6 @@ end
 	end
 end
 
-describe package('QEMU guest agent') do
+describe package('AD Replication Status Tool 1.0') do
 	it { should be_installed }
 end
